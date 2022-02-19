@@ -21,7 +21,10 @@ else:
     discount = 0.00
 
 Senior = str(input("Is owner senior ?(Y,y,N,n):")) # this is the senior discount
-if Senior.lower() in ['y' , 'Y'] : # so it only responds to y, Y, n, N
+while Senior not in ['y','Y','n','N']:# user is given an error if the answer is not valid, and asked to try again with a valid input
+    print("That answer is invalid. Please try again.")
+    Senior = str(input("Is owner senior ?(Y,y,N,n):"))
+if Senior.lower() in ['y' , 'Y'] : 
      discount = TOTAL_USAGE_COST * 0.11
 else:
     Senior.lower() in ['n , N']
